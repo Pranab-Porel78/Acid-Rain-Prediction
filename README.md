@@ -203,7 +203,7 @@ Testing Accuracy
 
 ## 🗂 Prediction History
 
-![Prediction History](images\PREDICTION_HISTORY.png)
+![Prediction History](images/PREDICTION_HISTORY.png)
 
 ---
 
