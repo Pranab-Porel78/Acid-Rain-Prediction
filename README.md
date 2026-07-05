@@ -197,13 +197,13 @@ Testing Accuracy
 
 ## 📈 Pollution Analytics
 
-![Pollution Chart](screenshots/pollution_chart.png)
+![Pollution Chart](images/API_POLLUTIONCHART.png)
 
 ---
 
 ## 🗂 Prediction History
 
-![Prediction History](images/API_POLLUTIONCHART.png)
+![Prediction History](images\PREDICTION_HISTORY.png)
 
 ---
 
