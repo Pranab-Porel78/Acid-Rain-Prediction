@@ -1,0 +1,332 @@
+{% extends "base.html" %}
+
+{% block title %}Pollution Monitoring{% endblock %}
+
+{% block content %}
+
+<div class="container-fluid">
+
+    <!-- ================= HEADER ================= -->
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+
+        <div>
+
+            <h2 class="fw-bold text-success">
+                🌫 Real-Time Air Pollution Monitoring
+            </h2>
+
+            <p class="text-muted mb-1">
+                Live Air Quality Monitoring using OpenWeather API
+            </p>
+
+            <p class="text-muted mb-1">
+                <i class="bi bi-clock"></i>
+                Last Updated :
+                <span id="time">--</span>
+            </p>
+
+            <span class="badge bg-success">
+                🟢 LIVE
+            </span>
+
+        </div>
+
+    </div>
+
+    <!-- ================= AQI CARD ================= -->
+
+    <div class="card bg-success text-white shadow-lg mb-4">
+
+        <div class="card-body text-center">
+
+            <i class="bi bi-wind display-2"></i>
+
+            <h5 class="mt-2">
+                Air Quality Index
+            </h5>
+
+            <h1 id="aqi" class="display-3 fw-bold">
+                --
+            </h1>
+
+            <h4 id="aqiStatus">
+                --
+            </h4>
+
+        </div>
+
+    </div>
+
+    <!-- ================= POLLUTANT CARDS ================= -->
+
+    <div class="row g-4">
+
+        <div class="col-lg-3 col-md-6">
+
+            <div class="card bg-primary text-white kpi-card">
+
+                <div class="card-body">
+
+                    <i class="bi bi-cloud-haze2-fill"></i>
+
+                    <h2 id="pm25">--</h2>
+
+                    <p>PM2.5 (µg/m³)</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+
+            <div class="card bg-info text-white kpi-card">
+
+                <div class="card-body">
+
+                    <i class="bi bi-cloud-fill"></i>
+
+                    <h2 id="pm10">--</h2>
+
+                    <p>PM10 (µg/m³)</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+
+            <div class="card bg-warning text-white kpi-card">
+
+                <div class="card-body">
+
+                    <i class="bi bi-thermometer-half"></i>
+
+                    <h2 id="pressure">--</h2>
+
+                    <p>Pressure (hPa)</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+
+            <div class="card bg-danger text-white kpi-card">
+
+                <div class="card-body">
+
+                    <i class="bi bi-globe2"></i>
+
+                    <h2 id="co">--</h2>
+
+                    <p>CO (μg/m³)</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ================= SECOND ROW ================= -->
+
+    <div class="row g-4 mt-1">
+
+        <div class="col-lg-3 col-md-6">
+
+            <div class="card bg-secondary text-white kpi-card">
+
+                <div class="card-body">
+
+                    <i class="bi bi-cloud-drizzle-fill"></i>
+
+                    <h2 id="so2">--</h2>
+
+                    <p>SO₂ (μg/m³)</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+
+            <div class="card bg-primary text-white kpi-card">
+
+                <div class="card-body">
+
+                    <i class="bi bi-cloud-lightning-rain-fill"></i>
+
+                    <h2 id="no2">--</h2>
+
+                    <p>NO₂ (μg/m³)</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+
+            <div class="card bg-success text-white kpi-card">
+
+                <div class="card-body">
+
+                    <i class="bi bi-flower1"></i>
+
+                    <h2 id="nh3">--</h2>
+
+                    <p>NH₃ (μg/m³)</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+
+            <div class="card bg-dark text-white kpi-card">
+
+                <div class="card-body">
+
+                    <i class="bi bi-brightness-high-fill"></i>
+
+                    <h2 id="o3">--</h2>
+
+                    <p>O₃ (μg/m³)</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ================= LOCATION ================= -->
+
+    <div class="card shadow mt-4">
+
+        <div class="card-header bg-dark text-white">
+
+            📍 Location Information
+
+        </div>
+
+        <div class="card-body">
+
+            <div class="row">
+
+                <div class="col-md-4">
+
+                    <h5>City</h5>
+
+                    <p id="city">--</p>
+
+                </div>
+
+                <div class="col-md-4">
+
+                    <h5>Latitude</h5>
+
+                    <p id="latitude">--</p>
+
+                </div>
+
+                <div class="col-md-4">
+
+                    <h5>Longitude</h5>
+
+                    <p id="longitude">--</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ================= CHART ================= -->
+
+    <div class="card shadow mt-4">
+
+        <div class="card-header bg-success text-white">
+
+            📊 Pollution Levels
+
+        </div>
+
+        <div class="card-body">
+
+            <canvas id="pollutionChart"></canvas>
+
+        </div>
+
+    </div>
+
+    <!-- ================= HISTORY ================= -->
+
+    <div class="card shadow mt-4">
+
+        <div class="card-header bg-dark text-white">
+
+            🕒 Latest Pollution History
+
+        </div>
+
+        <div class="card-body">
+
+            <div class="table-responsive">
+
+                <table class="table table-striped table-hover">
+
+                    <thead class="table-dark">
+
+                        <tr>
+
+                            <th>#</th>
+                            <th>AQI</th>
+                            <th>PM2.5</th>
+                            <th>PM10</th>
+                            <th>CO</th>
+                            <th>NO₂</th>
+                            <th>SO₂</th>
+                            <th>NH₃</th>
+                            <th>O₃</th>
+                            <th>Time</th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="historyTable">
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script src="{{ url_for('static', filename='js/pollution.js') }}"></script>
+
+{% endblock %}

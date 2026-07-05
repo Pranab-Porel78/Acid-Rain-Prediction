@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %}Sensor{% endblock %}
+
+{% block content %}
+
+<h2>Sensor Monitoring</h2>
+<hr>
+
+<div class="card shadow p-4">
+
+    <h4>Latest Sensor Data</h4>
+
+    <table class="table table-bordered mt-3">
+
+        <thead>
+
+        <tr>
+            <th>#</th>
+            <th>Temperature</th>
+            <th>Humidity</th>
+            <th>MQ7</th>
+            <th>NH₃ (MQ135)</th>
+            <th>CO₂ (MQ135)</th>
+            <th>Time</th>
+        </tr>
+
+        </thead>
+
+        <tbody id="sensorTable">
+
+        </tbody>
+
+    </table>
+
+</div>
+
+{% endblock %}

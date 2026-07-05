@@ -1,0 +1,442 @@
+/* =====================================
+   GLOBAL
+===================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    transition:.3s ease;
+}
+
+body{
+
+    background:#eef3f9;
+
+    font-family:'Poppins',sans-serif;
+
+    color:#2d3436;
+
+}
+
+/* =====================================
+   NAVBAR
+===================================== */
+
+.custom-navbar{
+
+    background:linear-gradient(135deg,#0d6efd,#20c997);
+
+    height:72px;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.15);
+
+}
+
+.navbar-brand{
+
+    font-size:24px;
+
+    font-weight:700;
+
+    letter-spacing:.5px;
+
+}
+
+/* =====================================
+   SIDEBAR
+===================================== */
+
+.sidebar{
+
+    min-height:100vh;
+
+    background:#1f2937;
+
+    box-shadow:5px 0 20px rgba(0,0,0,.15);
+
+}
+
+.sidebar h3{
+
+    color:white;
+
+    font-weight:700;
+
+}
+
+.sidebar p{
+
+    color:#bfc8d6;
+
+}
+
+.sidebar .list-group-item{
+
+    background:transparent;
+
+    color:white;
+
+    border:none;
+
+    padding:16px 22px;
+
+    font-weight:500;
+
+}
+
+.sidebar .list-group-item:hover{
+
+    background:#2563eb;
+
+    padding-left:28px;
+
+}
+
+.sidebar .active{
+
+    background:#198754 !important;
+
+    font-weight:700;
+
+}
+
+/* =====================================
+   CARD
+===================================== */
+
+.card{
+
+    border:none;
+
+    border-radius:22px;
+
+    overflow:hidden;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+}
+
+.card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 25px 40px rgba(0,0,0,.18);
+
+}
+
+.card-body{
+
+    padding:30px;
+
+}
+
+.card-header{
+
+    border:none;
+
+    font-size:18px;
+
+    font-weight:600;
+
+}
+
+/* =====================================
+   KPI CARD
+===================================== */
+
+.kpi-card{
+
+    text-align:center;
+
+}
+
+.kpi-card i{
+
+    font-size:52px;
+
+    margin-bottom:18px;
+
+    color:white;
+
+}
+
+.kpi-card h2{
+
+    color:white;
+
+    font-size:42px;
+
+    font-weight:700;
+
+}
+
+.kpi-card p{
+
+    color:white;
+
+    opacity:.95;
+
+    font-size:15px;
+
+}
+
+/* =====================================
+   CARD COLORS
+===================================== */
+
+.bg-primary{
+
+    background:linear-gradient(135deg,#3b82f6,#2563eb)!important;
+
+}
+
+.bg-info{
+
+    background:linear-gradient(135deg,#06b6d4,#0284c7)!important;
+
+}
+
+.bg-success{
+
+    background:linear-gradient(135deg,#22c55e,#16a34a)!important;
+
+}
+
+.bg-warning{
+
+    background:linear-gradient(135deg,#f59e0b,#ea580c)!important;
+
+    color:white!important;
+
+}
+
+.bg-secondary{
+
+    background:linear-gradient(135deg,#7c3aed,#4f46e5)!important;
+
+}
+
+.bg-dark{
+
+    background:linear-gradient(135deg,#374151,#111827)!important;
+
+}
+
+.bg-danger{
+
+    background:linear-gradient(135deg,#ef4444,#dc2626)!important;
+
+}
+
+/* =====================================
+   TABLE
+===================================== */
+
+.table{
+
+    margin-top:10px;
+
+}
+
+.table thead{
+
+    background:#111827;
+
+    color:white;
+
+}
+
+.table th{
+
+    text-align:center;
+
+}
+
+.table td{
+
+    text-align:center;
+
+    vertical-align:middle;
+
+}
+
+/* =====================================
+   PROGRESS BAR
+===================================== */
+
+.progress{
+
+    height:32px;
+
+    border-radius:30px;
+
+    background:#dee2e6;
+
+}
+
+.progress-bar{
+
+    border-radius:30px;
+
+    font-size:15px;
+
+    font-weight:700;
+
+}
+
+/* =====================================
+   ALERT
+===================================== */
+
+.alert{
+
+    border:none;
+
+    border-radius:18px;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+
+}
+
+/* =====================================
+   BUTTON
+===================================== */
+
+.btn{
+
+    border-radius:12px;
+
+    font-weight:600;
+
+}
+
+/* =====================================
+   CHART
+===================================== */
+
+canvas{
+
+    width:100%!important;
+
+    height:330px!important;
+
+}
+
+/* =====================================
+   FOOTER
+===================================== */
+
+footer{
+
+    margin-top:40px;
+
+    background:#111827;
+
+    color:white;
+
+    padding:18px;
+
+    text-align:center;
+
+}
+
+/* =====================================
+   RISK COLORS
+===================================== */
+
+.low{
+
+    color:#16a34a;
+
+    font-weight:700;
+
+}
+
+.medium{
+
+    color:#d97706;
+
+    font-weight:700;
+
+}
+
+.high{
+
+    color:#dc2626;
+
+    font-weight:700;
+
+}
+
+/* =====================================
+   LIVE BADGE
+===================================== */
+
+#connectionStatus{
+
+    animation:blink 1.3s infinite;
+
+    font-size:15px;
+
+}
+
+@keyframes blink{
+
+    0%{
+
+        opacity:1;
+
+    }
+
+    50%{
+
+        opacity:.4;
+
+    }
+
+    100%{
+
+        opacity:1;
+
+    }
+
+}
+
+/* =====================================
+   LAST UPDATE
+===================================== */
+
+#lastUpdate{
+
+    font-weight:600;
+
+    color:#2563eb;
+
+}
+
+/* =====================================
+   RESPONSIVE
+===================================== */
+
+@media(max-width:768px){
+
+    .navbar-brand{
+
+        font-size:18px;
+
+    }
+
+    .card h2{
+
+        font-size:30px;
+
+    }
+
+    .kpi-card i{
+
+        font-size:42px;
+
+    }
+
+}
