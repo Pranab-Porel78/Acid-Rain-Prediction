@@ -167,31 +167,31 @@ Testing Accuracy
 
 ## 🏠 Dashboard
 
-![Dashboard](images\REALTIME_SENSORDATA.png)
+![Dashboard](images/REALTIME_SENSORDATA.png)
 
 ---
 
 ## 🌡️ Real-Time Sensor Monitoring
 
-![Sensor](images\SENSOR_LATESTDATA.png)
+![Sensor](images/SENSOR_LATESTDATA.png)
 
 ---
 
 ## 🌍 Live Pollution Data
 
-![Pollution](images\API_CURRENTDATA.png)
+![Pollution](images/API_CURRENTDATA.png)
 
 ---
 
 ## 🌧️ Acid Rain Prediction
 
-![Prediction](images\REALTIME_PREDICTION.png)
+![Prediction](images/REALTIME_PREDICTION.png)
 
 ---
 
 ## 📊 Sensor Analytics
 
-![Chart](images\SENSOR_CHART.png)
+![Chart](images/SENSOR_CHART.png)
 
 ---
 
@@ -203,13 +203,13 @@ Testing Accuracy
 
 ## 🗂 Prediction History
 
-![Prediction History](images\API_POLLUTIONCHART.png)
+![Prediction History](images/API_POLLUTIONCHART.png)
 
 ---
 
 ## 🗄 Pollution History
 
-![History](images\API_HISTORYDATA.png)
+![History](images/API_HISTORYDATA.png)
 
 ---
 
